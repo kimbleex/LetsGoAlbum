@@ -336,7 +336,7 @@ pnpm build
 
 **用 ❤️ 和 Astro 构建**
 
-[![GitHub stars](https://img.shields.io/github/stars/your-username/LetsGoAlbum?style=social)](https://github.com/kimbleex/LetsGoAlbum)
-[![GitHub forks](https://img.shields.io/github/forks/your-username/LetsGoAlbum?style=social)](https://github.com/kimbleex/LetsGoAlbum)
+[![GitHub stars](https://img.shields.io/github/stars/kimbleex/LetsGoAlbum?style=social)](https://github.com/kimbleex/LetsGoAlbum)
+[![GitHub forks](https://img.shields.io/github/forks/kimbleex/LetsGoAlbum?style=social)](https://github.com/kimbleex/LetsGoAlbum)
 
 </div>
