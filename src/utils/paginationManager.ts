@@ -1,3 +1,4 @@
+import config from '../../config';
 import type { Album } from './types.js';
 
 export class PaginationManager {

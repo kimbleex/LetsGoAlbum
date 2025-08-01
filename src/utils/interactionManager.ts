@@ -1,10 +1,11 @@
+import config from '../../config';
 import type { Album } from './types.js';
 
 export class InteractionManager {
   private albums: Album[];
 
-  constructor(albums: Album[]) {
-    this.albums = albums;
+  constructor() {
+    this.albums = config.albums;
   }
 
   public bindAlbumCardEvents(): void {

@@ -1,3 +1,4 @@
+import config from '../../config';
 import type { Album } from './types.js';
 
 export class SearchManager {
@@ -12,8 +13,8 @@ export class SearchManager {
   private searchQuery: string = '';
   private onSearchChange: (query: string) => void;
 
-  constructor(albums: Album[], onSearchChange: (query: string) => void) {
-    this.albums = albums;
+  constructor(onSearchChange: (query: string) => void) {
+    this.albums = config.albums;
     this.onSearchChange = onSearchChange;
     this.initElements();
     this.bindEvents();

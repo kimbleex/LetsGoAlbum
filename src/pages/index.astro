@@ -1,17 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { albums } from '../data/albums.js';
+import config from '../../config.ts';
 ---
 
-<Layout title="我的相册 - 记录美好时光">
+<Layout title={config.title}>
   <div class="min-h-screen bg-gray-50">
     <!-- 头部 -->
     <header class="bg-white shadow-sm border-b">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center py-6">
           <div class="flex items-center">
-            <h1 class="text-2xl font-bold text-gray-900">我的相册</h1>
-            <span class="ml-2 text-sm text-gray-500">记录美好时光</span>
+            <h1 class="text-2xl font-bold text-gray-900">{config.title}</h1>
+            <span class="ml-2 text-sm text-gray-500">{config.subtitle}</span>
           </div>
           <div class="flex items-center space-x-6">
             <!-- 搜索框 -->
@@ -45,7 +45,7 @@ import { albums } from '../data/albums.js';
             </div>
             
             <div class="text-sm text-gray-500">
-              共 <span id="album-count">{albums.length}</span> 个相册
+              共 <span id="album-count">{config.albums.length}</span> 个相册
             </div>
           </div>
         </div>
@@ -138,11 +138,11 @@ import { albums } from '../data/albums.js';
     <!-- 初始化相册管理器 -->
   <script>
     import { AlbumManager } from '../utils/albumManager.js';
-    import { albums } from '../data/albums.js';
+    import config from '../../config.ts';
 
     // 初始化相册管理器
     document.addEventListener('DOMContentLoaded', () => {
-      new AlbumManager(albums);
+      new AlbumManager();
     });
   </script>
 </Layout>

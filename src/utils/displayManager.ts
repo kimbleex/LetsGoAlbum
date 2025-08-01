@@ -1,3 +1,4 @@
+import config from '../../config';
 import type { Album } from './types.js';
 
 export class DisplayManager {
@@ -92,7 +93,7 @@ export class DisplayManager {
 
     // 更新相册数量
     if (this.albumCount) {
-      this.albumCount.textContent = albums.length.toString();
+      this.albumCount.textContent = config.albums.length.toString();
     }
   }
 } 

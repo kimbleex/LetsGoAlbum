@@ -3,6 +3,7 @@ import { SearchManager } from './searchManager.js';
 import { PaginationManager } from './paginationManager.js';
 import { DisplayManager } from './displayManager.js';
 import { InteractionManager } from './interactionManager.js';
+import config from '../../config';
 
 export class AlbumManager {
   private albums: Album[];
@@ -12,14 +13,14 @@ export class AlbumManager {
   private displayManager!: DisplayManager;
   private interactionManager!: InteractionManager;
 
-  constructor(albums: Album[]) {
-    this.albums = albums;
-    this.filteredAlbums = [...albums];
+  constructor() {
+    this.albums = config.albums;
+    this.filteredAlbums = [...this.albums];
     
     // 延迟初始化，确保DOM已经加载
     setTimeout(() => {
       // 初始化各个管理器
-      this.searchManager = new SearchManager(albums, (query: string) => {
+      this.searchManager = new SearchManager((query: string) => {
         this.handleSearchChange(query);
       });
       
@@ -28,7 +29,7 @@ export class AlbumManager {
       });
       
       this.displayManager = new DisplayManager();
-      this.interactionManager = new InteractionManager(albums);
+      this.interactionManager = new InteractionManager();
       
       // 确保分页管理器有初始数据
       this.paginationManager.updatePagination(this.filteredAlbums, '');
